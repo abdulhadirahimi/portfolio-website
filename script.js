@@ -1,13 +1,45 @@
-console.log("Portfolio Loaded Successfully");
+const form = document.getElementById("contact-form");
 
-const title = document.getElementById("title");
+const nameInput = document.getElementById("name");
 
-console.log(title);
+const emailInput = document.getElementById("email");
 
-const button = document.querySelector(".btn");
+const messageInput = document.getElementById("message");
 
-button.addEventListener("click", function () {
+form.addEventListener("submit", function(event){
 
-    console.log("Button Clicked");
+    event.preventDefault();
+
+    const name = nameInput.value;
+
+    const email = emailInput.value;
+
+    const message = messageInput.value;
+
+    if(name.trim() === ""){
+
+        alert("Please enter your name.");
+
+        return;
+
+    }
+
+    if(email.trim() === ""){
+
+        alert("Please enter your email.");
+
+        return;
+
+    }
+
+    if(message.trim() === ""){
+
+        alert("Please enter your message.");
+
+        return;
+
+    }
+
+    alert("Message sent successfully!");
 
 });
