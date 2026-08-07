@@ -1,46 +1,204 @@
-/* =========================
+/* ==========================================================
+   Portfolio Website
+   Author: Abdulhadi Rahimi
+   Description: Professional Portfolio Website Styles
+========================================================== */
+
+
+/* ==========================================================
+   CSS Variables
+========================================================== */
+
+:root {
+
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+
+    --background-color: #f8fafc;
+    --card-color: #ffffff;
+
+    --text-color: #111827;
+    --text-light: #6b7280;
+
+    --header-color: #111827;
+
+    --border-radius: 10px;
+
+    --box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.1);
+
+    --transition:
+        all 0.3s ease;
+
+}
+
+
+/* ==========================================================
    Global Reset
-========================= */
+========================================================== */
 
 * {
+
     margin: 0;
     padding: 0;
+
     box-sizing: border-box;
+
 }
 
 
 html {
+
     scroll-behavior: smooth;
+
 }
 
 
 body {
 
-    font-family: Arial, sans-serif;
-    background-color: #f9fafb;
-    color: #111827;
-    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--background-color);
+
+    color: var(--text-color);
+
+    line-height: 1.7;
 
 }
 
 
-/* =========================
-   Navigation / Header
-========================= */
+/* ==========================================================
+   Images
+========================================================== */
 
+img {
+
+    max-width: 100%;
+
+    display: block;
+
+}
+
+
+/* ==========================================================
+   Links
+========================================================== */
+
+a {
+
+    text-decoration: none;
+
+}
+
+
+/* ==========================================================
+   Lists
+========================================================== */
+
+ul {
+
+    list-style: none;
+
+}
+
+
+/* ==========================================================
+   Buttons
+========================================================== */
+
+.btn {
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    margin-right: 10px;
+
+    padding: 12px 28px;
+
+    background: var(--primary-color);
+
+    color: white;
+
+    border-radius: var(--border-radius);
+
+    transition: var(--transition);
+
+    font-weight: bold;
+
+}
+
+
+.btn:hover {
+
+    background: var(--primary-hover);
+
+    transform: translateY(-3px);
+
+}
+
+
+/* ==========================================================
+   Sections
+========================================================== */
+
+section {
+
+    padding: 90px 10%;
+
+}
+
+
+/* ==========================================================
+   Section Titles
+========================================================== */
+
+section h2 {
+
+    font-size: 38px;
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+}
+
+
+/* ==========================================================
+   Header
+========================================================== */
 
 header {
 
-    background-color: #111827;
-    padding: 20px;
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background: var(--header-color);
+
+    box-shadow: var(--box-shadow);
 
 }
 
 
+/* ==========================================================
+   Navigation
+========================================================== */
+
 nav {
 
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 18px 30px;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 
 }
@@ -49,7 +207,9 @@ nav {
 .logo {
 
     color: white;
-    font-size: 24px;
+
+    font-size: 28px;
+
     font-weight: bold;
 
 }
@@ -57,9 +217,9 @@ nav {
 
 nav ul {
 
-    list-style: none;
     display: flex;
-    gap: 25px;
+
+    gap: 28px;
 
 }
 
@@ -67,239 +227,352 @@ nav ul {
 nav ul li a {
 
     color: white;
-    text-decoration: none;
-    font-size: 16px;
+
+    transition: var(--transition);
+
+    font-weight: 500;
 
 }
 
 
 nav ul li a:hover {
 
-    color: #2563eb;
+    color: var(--primary-color);
 
 }
 
 
+/* ==========================================================
+   Dark Mode Button
+========================================================== */
 
-/* =========================
-   All Sections
-========================= */
+#theme-toggle {
 
+    background: var(--primary-color);
 
-section {
+    color: white;
 
-    padding: 80px 10%;
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: var(--border-radius);
+
+    cursor: pointer;
+
+    transition: var(--transition);
 
 }
 
 
-h2 {
+#theme-toggle:hover {
 
-    text-align: center;
-    font-size: 35px;
-    margin-bottom: 40px;
-    color: #111827;
+    background: var(--primary-hover);
 
 }
 
 
-
-/* =========================
+/* ==========================================================
    Home Section
-========================= */
-
+========================================================== */
 
 #home {
 
-    min-height: 90vh;
+    min-height: 100vh;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     text-align: center;
 
 }
 
 
-#home h1 {
+.hero-content {
 
-    font-size: 55px;
-    margin-bottom: 20px;
+    max-width: 800px;
 
 }
 
 
-#home p {
+.hero-content h1 {
+
+    font-size: 60px;
+
+    margin: 20px 0;
+
+}
+
+
+.hero-content h2 {
+
+    font-size: 30px;
+
+    margin-bottom: 15px;
+
+    color: var(--primary-color);
+
+}
+
+
+.hero-content p {
 
     font-size: 20px;
-    color: #555;
+
+    color: var(--text-light);
+
+    margin-bottom: 15px;
 
 }
-
-
-.btn {
-
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 30px;
-
-    background-color: #2563eb;
-    color: white;
-
-    text-decoration: none;
-    border-radius: 8px;
-
-}
-
-
-.btn:hover {
-
-    background-color: #1d4ed8;
-
-}
-
-
-
-/* =========================
+/* ==========================================================
    About Section
-========================= */
+========================================================== */
+
+#about {
+
+    background: var(--card-color);
+
+}
 
 
 #about p {
 
-    max-width: 700px;
+    max-width: 800px;
+
     margin: auto;
+
     text-align: center;
+
     font-size: 18px;
+
+    color: var(--text-light);
 
 }
 
 
-
-/* =========================
+/* ==========================================================
    Skills Section
-========================= */
+========================================================== */
+
+#skills {
+
+    background: var(--background-color);
+
+}
 
 
 .skills-container {
 
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 20px;
+
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 25px;
+
+    margin-top: 40px;
 
 }
 
 
 .skill {
 
-    background-color: white;
+    background: var(--card-color);
 
-    padding: 30px;
+    padding: 30px 20px;
 
     text-align: center;
 
-    border-radius: 10px;
+    border-radius: var(--border-radius);
 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: var(--box-shadow);
 
     font-size: 20px;
+
+    font-weight: bold;
+
+    transition: var(--transition);
+
+}
+
+
+.skill:hover {
+
+    transform: translateY(-8px);
+
+    background: var(--primary-color);
+
+    color: white;
 
 }
 
 
 
-/* =========================
+/* ==========================================================
    Projects Section
-========================= */
+========================================================== */
 
+
+#projects {
+
+    background: var(--card-color);
+
+}
+
+
+/* Projects Container */
 
 .projects-container {
 
     display: grid;
 
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(300px, 1fr)
+    );
 
-    gap:20px;
+    gap: 30px;
+
+    margin-top: 40px;
 
 }
 
 
+
+/* Project Card */
 
 .project {
 
-    background:white;
+    background: var(--background-color);
 
-    padding:30px;
+    border-radius: var(--border-radius);
 
-    border-radius:10px;
+    padding: 30px;
 
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: var(--box-shadow);
+
+    transition: var(--transition);
+
+    overflow: hidden;
 
 }
 
+
+
+/* Project Hover Effect */
+
+.project:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+
+
+/* Project Title */
 
 .project h3 {
 
-    margin-bottom:15px;
+    color: var(--primary-color);
+
+    font-size: 24px;
+
+    margin-bottom: 15px;
 
 }
 
 
+
+/* Project Description */
 
 .project p {
 
-    color:#555;
+    color: var(--text-light);
+
+    margin-bottom: 25px;
+
+    line-height: 1.7;
 
 }
 
 
 
-/* =========================
-   Resume Section
-========================= */
+/* Project Buttons */
 
+.project .btn {
+
+    margin-top: 10px;
+
+}
+
+
+
+/* Button Hover */
+
+.project .btn:hover {
+
+    transform: translateY(-3px);
+
+}
+/* ==========================================================
+   Resume Section
+========================================================== */
 
 #resume {
 
-    text-align:center;
+    background: var(--background-color);
+
+    text-align: center;
 
 }
 
 
+#resume p {
 
-.resume-btn {
+    max-width: 700px;
 
-    display:inline-block;
+    margin: 0 auto 30px;
 
-    background:#2563eb;
+    color: var(--text-light);
 
-    color:white;
-
-    padding:12px 25px;
-
-    text-decoration:none;
-
-    border-radius:8px;
+    font-size: 18px;
 
 }
 
 
+#resume .btn {
 
-/* =========================
-   Contact Form
-========================= */
+    margin-top: 10px;
+
+}
+
+/* ==========================================================
+   Contact Section
+========================================================== */
+
+#contact {
+
+    background: var(--card-color);
+
+}
 
 
 form {
 
-    max-width:600px;
+    max-width: 700px;
 
-    margin:auto;
+    margin: auto;
 
-    display:flex;
+    display: flex;
 
-    flex-direction:column;
+    flex-direction: column;
 
-    gap:15px;
+    gap: 20px;
 
 }
 
@@ -307,119 +580,362 @@ form {
 input,
 textarea {
 
-    padding:15px;
+    width: 100%;
 
-    border:1px solid #ccc;
+    padding: 15px;
 
-    border-radius:5px;
+    font-size: 16px;
 
-    font-size:16px;
+    font-family: inherit;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: var(--border-radius);
+
+    outline: none;
+
+    transition: var(--transition);
+
+}
+
+
+input:focus,
+textarea:focus {
+
+    border-color: var(--primary-color);
+
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+
+}
+
+
+textarea {
+
+    resize: vertical;
+
+    min-height: 150px;
+
+}
+
+
+form button {
+
+    background: var(--primary-color);
+
+    color: white;
+
+    border: none;
+
+    padding: 15px;
+
+    border-radius: var(--border-radius);
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+form button:hover {
+
+    background: var(--primary-hover);
+
+}
+
+
+#form-message {
+
+    margin-top: 10px;
+
+    text-align: center;
+
+    font-weight: bold;
+
+}
+
+/* ==========================================================
+   WhatsApp Button
+========================================================== */
+
+
+.whatsapp-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+
+    background: #25D366;
+
+    color: white;
+
+
+    padding: 12px 25px;
+
+
+    border-radius: 30px;
+
+
+    font-size: 18px;
+
+
+    font-weight: bold;
+
+
+    margin-bottom: 30px;
+
+
+    transition: all 0.3s ease;
 
 }
 
 
 
-button {
+.whatsapp-btn:hover {
 
-    padding:15px;
 
-    background:#2563eb;
+    background: #128C7E;
 
-    color:white;
 
-    border:none;
+    transform: translateY(-5px);
 
-    border-radius:8px;
-
-    cursor:pointer;
 
 }
 
 
-button:hover {
-
-    background:#1d4ed8;
-
-}
-
-
-
-/* =========================
+/* ==========================================================
    Footer
-========================= */
-
+========================================================== */
 
 footer {
 
-    background:#111827;
+    background: var(--header-color);
 
-    color:white;
+    color: white;
 
-    text-align:center;
+    text-align: center;
 
-    padding:20px;
+    padding: 25px;
 
 }
 
 
+/* ==========================================================
+   Dark Mode
+========================================================== */
 
-/* =========================
+body.dark {
+
+    --background-color: #111827;
+
+    --card-color: #1f2937;
+
+    --text-color: #f9fafb;
+
+    --text-light: #d1d5db;
+
+    --header-color: #0f172a;
+
+}
+
+
+body.dark .project,
+body.dark .skill,
+body.dark #about,
+body.dark #projects,
+body.dark #contact {
+
+    background: var(--card-color);
+
+}
+
+
+body.dark input,
+body.dark textarea {
+
+    background: #374151;
+
+    color: white;
+
+    border-color: #4b5563;
+
+}
+
+
+body.dark input::placeholder,
+body.dark textarea::placeholder {
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   Text Selection
+========================================================== */
+
+::selection {
+
+    background: var(--primary-color);
+
+    color: white;
+
+}
+
+
+/* ==========================================================
+   Scrollbar
+========================================================== */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: #e5e7eb;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background: var(--primary-color);
+
+    border-radius: 10px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: var(--primary-hover);
+
+}
+
+
+/* ==========================================================
    Responsive Design
-========================= */
+========================================================== */
 
-
-@media(max-width:768px){
-
+@media (max-width: 992px) {
 
     nav {
 
-        flex-direction:column;
+        flex-direction: column;
 
-        gap:20px;
-
-    }
-
-
+        gap: 20px;
+ }
 
     nav ul {
 
-        flex-direction:column;
+        flex-wrap: wrap;
 
-        text-align:center;
-
-    }
-
-
-
-    #home h1 {
-
-        font-size:35px;
+        justify-content: center;
 
     }
-
-
-
-    .skills-container {
-
-        grid-template-columns:1fr;
-
-    }
-
-
-
-    .projects-container {
-
-        grid-template-columns:1fr;
-
-    }
-
-
 
 }
-#form-message{
 
-    margin-top:15px;
 
-    font-weight:bold;
+@media (max-width: 768px) {
+
+    section {
+
+        padding: 70px 7%;
+
+    }
+
+    .hero-content h1 {
+
+        font-size: 42px;
+ }
+
+    .hero-content h2 {
+
+        font-size: 24px;
+
+    }
+
+    .hero-content p {
+
+        font-size: 18px;
+
+    }
+
+    section h2 {
+
+        font-size: 30px;
+
+    }
+
+    .btn {
+
+        display: block;
+
+        width: fit-content;
+
+        margin: 15px auto;
+
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    nav {
+
+        padding: 15px;
+
+    }
+
+    nav ul {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+
+    }
+
+    .hero-content h1 {
+
+        font-size: 34px;
+
+    }
+
+    .hero-content h2 {
+
+        font-size: 20px;
+
+    }
+
+    .hero-content p {
+
+        font-size: 16px;
+
+    }
+
+    input,
+    textarea,
+    form button {
+
+        font-size: 15px;
+
+    }
 
 }
