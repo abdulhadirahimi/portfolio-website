@@ -830,112 +830,243 @@ body.dark textarea::placeholder {
    Responsive Design
 ========================================================== */
 
+/* =========================
+   Tablet
+   Screens up to 992px
+========================= */
+
 @media (max-width: 992px) {
 
     nav {
-
-        flex-direction: column;
-
-        gap: 20px;
- }
+        flex-wrap: wrap;
+        gap: 15px;
+    }
 
     nav ul {
-
         flex-wrap: wrap;
-
         justify-content: center;
+        gap: 15px 20px;
+    }
 
+    section {
+        padding: 70px 7%;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
 
+
+/* =========================
+   Mobile
+   Screens up to 768px
+========================= */
 
 @media (max-width: 768px) {
 
-    section {
+    /* Header */
 
-        padding: 70px 7%;
-
+    header {
+        padding: 15px 20px;
     }
-
-    .hero-content h1 {
-
-        font-size: 42px;
- }
-
-    .hero-content h2 {
-
-        font-size: 24px;
-
-    }
-
-    .hero-content p {
-
-        font-size: 18px;
-
-    }
-
-    section h2 {
-
-        font-size: 30px;
-
-    }
-
-    .btn {
-
-        display: block;
-
-        width: fit-content;
-
-        margin: 15px auto;
-
-    }
-
-}
-
-
-@media (max-width: 576px) {
 
     nav {
-
-        padding: 15px;
-
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
 
     nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px 15px;
+        width: 100%;
+    }
 
-        flex-direction: column;
+    nav ul li a {
+        font-size: 14px;
+        white-space: nowrap;
+    }
 
-        gap: 15px;
 
+    /* Sections */
+
+    section {
+        padding: 60px 20px;
+    }
+
+    section h2 {
+        font-size: 30px;
+    }
+
+
+    /* Home */
+
+    .hero-content {
+        width: 100%;
         text-align: center;
-
     }
 
     .hero-content h1 {
-
-        font-size: 34px;
-
+        font-size: 42px;
+        line-height: 1.2;
     }
 
     .hero-content h2 {
-
-        font-size: 20px;
-
+        font-size: 24px;
     }
 
     .hero-content p {
+        font-size: 18px;
+    }
 
-        font-size: 16px;
 
+    /* Buttons */
+
+    .btn {
+        display: block;
+        width: fit-content;
+        max-width: 100%;
+        margin: 15px auto;
+    }
+
+
+    /* Skills */
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Projects */
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Contact */
+
+    form {
+        width: 100%;
     }
 
     input,
     textarea,
     form button {
+        width: 100%;
+    }
 
+}
+
+
+/* =========================
+   Small Mobile
+   Screens up to 576px
+========================= */
+
+@media (max-width: 576px) {
+
+    /* Header */
+
+    header {
+        padding: 12px 15px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px 12px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+    }
+
+
+    /* Home */
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-content h2 {
+        font-size: 20px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+
+    /* Sections */
+
+    section {
+        padding: 50px 15px;
+    }
+
+    section h2 {
+        font-size: 26px;
+    }
+
+
+    /* Buttons */
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+
+
+    /* Contact */
+
+    input,
+    textarea,
+    form button {
         font-size: 15px;
+    }
 
+}
+
+
+/* =========================
+   Very Small Mobile
+   Screens up to 400px
+========================= */
+
+@media (max-width: 400px) {
+
+    nav ul {
+        gap: 7px 10px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .hero-content h2 {
+        font-size: 18px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
     }
 
 }
