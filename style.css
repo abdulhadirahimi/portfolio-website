@@ -243,6 +243,29 @@ nav ul li a:hover {
 
 
 /* ==========================================================
+   Hamburger Menu
+========================================================== */
+
+.menu-toggle {
+
+    display: none;
+
+    background: transparent;
+
+    color: white;
+
+    border: none;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    padding: 5px;
+
+}
+
+
+/* ==========================================================
    Dark Mode Button
 ========================================================== */
 
@@ -327,6 +350,8 @@ nav ul li a:hover {
     margin-bottom: 15px;
 
 }
+
+
 /* ==========================================================
    About Section
 ========================================================== */
@@ -409,11 +434,9 @@ nav ul li a:hover {
 }
 
 
-
 /* ==========================================================
    Projects Section
 ========================================================== */
-
 
 #projects {
 
@@ -440,7 +463,6 @@ nav ul li a:hover {
 }
 
 
-
 /* Project Card */
 
 .project {
@@ -460,7 +482,6 @@ nav ul li a:hover {
 }
 
 
-
 /* Project Hover Effect */
 
 .project:hover {
@@ -471,7 +492,6 @@ nav ul li a:hover {
         0 10px 25px rgba(0,0,0,0.15);
 
 }
-
 
 
 /* Project Title */
@@ -487,7 +507,6 @@ nav ul li a:hover {
 }
 
 
-
 /* Project Description */
 
 .project p {
@@ -501,7 +520,6 @@ nav ul li a:hover {
 }
 
 
-
 /* Project Buttons */
 
 .project .btn {
@@ -511,7 +529,6 @@ nav ul li a:hover {
 }
 
 
-
 /* Button Hover */
 
 .project .btn:hover {
@@ -519,6 +536,8 @@ nav ul li a:hover {
     transform: translateY(-3px);
 
 }
+
+
 /* ==========================================================
    Resume Section
 ========================================================== */
@@ -550,6 +569,7 @@ nav ul li a:hover {
     margin-top: 10px;
 
 }
+
 
 /* ==========================================================
    Contact Section
@@ -604,7 +624,8 @@ textarea:focus {
 
     border-color: var(--primary-color);
 
-    box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+    box-shadow:
+        0 0 5px rgba(37, 99, 235, 0.3);
 
 }
 
@@ -658,10 +679,10 @@ form button:hover {
 
 }
 
+
 /* ==========================================================
    WhatsApp Button
 ========================================================== */
-
 
 .whatsapp-btn {
 
@@ -673,41 +694,30 @@ form button:hover {
 
     gap: 10px;
 
-
     background: #25D366;
 
     color: white;
 
-
     padding: 12px 25px;
-
 
     border-radius: 30px;
 
-
     font-size: 18px;
-
 
     font-weight: bold;
 
-
     margin-bottom: 30px;
-
 
     transition: all 0.3s ease;
 
 }
 
 
-
 .whatsapp-btn:hover {
-
 
     background: #128C7E;
 
-
     transform: translateY(-5px);
-
 
 }
 
@@ -830,6 +840,7 @@ body.dark textarea::placeholder {
    Responsive Design
 ========================================================== */
 
+
 /* =========================
    Tablet
    Screens up to 992px
@@ -838,26 +849,39 @@ body.dark textarea::placeholder {
 @media (max-width: 992px) {
 
     nav {
+
         flex-wrap: wrap;
+
         gap: 15px;
+
     }
 
     nav ul {
+
         flex-wrap: wrap;
+
         justify-content: center;
+
         gap: 15px 20px;
+
     }
 
     section {
+
         padding: 70px 7%;
+
     }
 
     .skills-container {
+
         grid-template-columns: repeat(2, 1fr);
+
     }
 
     .projects-container {
+
         grid-template-columns: repeat(2, 1fr);
+
     }
 
 }
@@ -870,99 +894,202 @@ body.dark textarea::placeholder {
 
 @media (max-width: 768px) {
 
+
     /* Header */
 
     header {
-        padding: 15px 20px;
+
+        padding: 0;
+
     }
+
 
     nav {
-        flex-direction: column;
+
+        position: relative;
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
         align-items: center;
-        gap: 15px;
+
+        padding: 15px 20px;
+
+        gap: 0;
+
     }
+
+
+    /* Hamburger */
+
+    .menu-toggle {
+
+        display: block;
+
+        order: 2;
+
+    }
+
+
+    /* Navigation Menu */
 
     nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 10px 15px;
+
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
         width: 100%;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 15px;
+
+        padding: 20px;
+
+        background: var(--header-color);
+
+        box-shadow: var(--box-shadow);
+
     }
 
+
+    /* Open Menu */
+
+    nav ul.active {
+
+        display: flex;
+
+    }
+
+
     nav ul li a {
-        font-size: 14px;
-        white-space: nowrap;
+
+        font-size: 16px;
+
+    }
+
+
+    /* Dark Mode Button */
+
+    #theme-toggle {
+
+        order: 3;
+
+        font-size: 13px;
+
+        padding: 8px 12px;
+
     }
 
 
     /* Sections */
 
     section {
+
         padding: 60px 20px;
+
     }
 
+
     section h2 {
+
         font-size: 30px;
+
     }
 
 
     /* Home */
 
     .hero-content {
+
         width: 100%;
+
         text-align: center;
+
     }
+
 
     .hero-content h1 {
+
         font-size: 42px;
+
         line-height: 1.2;
+
     }
+
 
     .hero-content h2 {
+
         font-size: 24px;
+
     }
 
+
     .hero-content p {
+
         font-size: 18px;
+
     }
 
 
     /* Buttons */
 
     .btn {
+
         display: block;
+
         width: fit-content;
+
         max-width: 100%;
+
         margin: 15px auto;
+
     }
 
 
     /* Skills */
 
     .skills-container {
+
         grid-template-columns: 1fr;
+
     }
 
 
     /* Projects */
 
     .projects-container {
+
         grid-template-columns: 1fr;
+
     }
 
 
     /* Contact */
 
     form {
+
         width: 100%;
+
     }
+
 
     input,
     textarea,
     form button {
+
         width: 100%;
+
     }
 
 }
@@ -975,59 +1102,108 @@ body.dark textarea::placeholder {
 
 @media (max-width: 576px) {
 
+
     /* Header */
 
     header {
-        padding: 12px 15px;
+
+        padding: 0;
+
     }
+
 
     nav {
-        gap: 12px;
+
+        padding: 12px 15px;
+
+        gap: 0;
+
     }
+
 
     nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 8px 12px;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+
     }
 
+
     nav ul li a {
-        font-size: 13px;
+
+        font-size: 15px;
+
+    }
+
+
+    .menu-toggle {
+
+        font-size: 26px;
+
+    }
+
+
+    #theme-toggle {
+
+        font-size: 12px;
+
+        padding: 7px 10px;
+
     }
 
 
     /* Home */
 
     .hero-content h1 {
+
         font-size: 34px;
+
     }
+
 
     .hero-content h2 {
+
         font-size: 20px;
+
     }
 
+
     .hero-content p {
+
         font-size: 16px;
+
     }
 
 
     /* Sections */
 
     section {
+
         padding: 50px 15px;
+
     }
 
+
     section h2 {
+
         font-size: 26px;
+
     }
 
 
     /* Buttons */
 
     .btn {
+
         width: 100%;
+
         max-width: 280px;
+
         text-align: center;
+
     }
 
 
@@ -1036,7 +1212,9 @@ body.dark textarea::placeholder {
     input,
     textarea,
     form button {
+
         font-size: 15px;
+
     }
 
 }
@@ -1049,24 +1227,69 @@ body.dark textarea::placeholder {
 
 @media (max-width: 400px) {
 
-    nav ul {
-        gap: 7px 10px;
+
+    nav {
+
+        padding: 10px;
+
     }
+
+
+    nav ul {
+
+        gap: 12px;
+
+    }
+
 
     nav ul li a {
-        font-size: 12px;
+
+        font-size: 14px;
+
     }
+
+
+    .logo {
+
+        font-size: 24px;
+
+    }
+
+
+    .menu-toggle {
+
+        font-size: 24px;
+
+    }
+
+
+    #theme-toggle {
+
+        font-size: 11px;
+
+        padding: 6px 8px;
+
+    }
+
 
     .hero-content h1 {
+
         font-size: 30px;
+
     }
+
 
     .hero-content h2 {
+
         font-size: 18px;
+
     }
 
+
     .hero-content p {
+
         font-size: 15px;
+
     }
 
 }
