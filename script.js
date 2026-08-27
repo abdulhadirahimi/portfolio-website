@@ -1,19 +1,4 @@
 // =========================================
-// Hamburger Menu
-// =========================================
-
-const menuButton =
-    document.getElementById("menu-toggle");
-
-const navMenu =
-    document.querySelector("nav ul");
-
-menuButton.addEventListener("click", function () {
-
-    navMenu.classList.toggle("active");
-
-});
-// =========================================
 // Portfolio Website JavaScript
 // Author: Abdulhadi Rahimi
 // =========================================
@@ -24,6 +9,10 @@ menuButton.addEventListener("click", function () {
 // =========================================
 
 const themeButton = document.getElementById("theme-toggle");
+
+const menuButton = document.getElementById("menu-toggle");
+
+const navMenu = document.querySelector("nav ul");
 
 const form = document.getElementById("contact-form");
 
@@ -37,88 +26,24 @@ const formMessage = document.getElementById("form-message");
 
 
 // =========================================
-// Hamburger Menu Elements
-// =========================================
-
-const menuToggle = document.getElementById("menu-toggle");
-
-const navMenu = document.querySelector("nav ul");
-
-
-// =========================================
-// Hamburger Menu Toggle
-// =========================================
-
-menuToggle.addEventListener("click", function () {
-
-    navMenu.classList.toggle("active");
-
-    const isOpen = navMenu.classList.contains("active");
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        isOpen
-    );
-
-    menuToggle.setAttribute(
-        "aria-label",
-        isOpen
-            ? "Close navigation menu"
-            : "Open navigation menu"
-    );
-
-    menuToggle.textContent = isOpen
-        ? "✕"
-        : "☰";
-
-});
-
-
-// =========================================
-// Close Mobile Menu When Link Is Clicked
-// =========================================
-
-const navLinks = document.querySelectorAll("nav ul li a");
-
-navLinks.forEach(function (link) {
-
-    link.addEventListener("click", function () {
-
-        navMenu.classList.remove("active");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-        menuToggle.setAttribute(
-            "aria-label",
-            "Open navigation menu"
-        );
-
-        menuToggle.textContent = "☰";
-
-    });
-
-});
-
-
-// =========================================
 // Load Saved Theme
 // =========================================
 
 const savedTheme = localStorage.getItem("theme");
 
-
 if (savedTheme === "dark") {
 
     document.body.classList.add("dark");
 
-    themeButton.textContent = "☀️ Light Mode";
+    if (themeButton) {
+        themeButton.textContent = "☀️ Light";
+    }
 
 } else {
 
-    themeButton.textContent = "🌙 Dark Mode";
+    if (themeButton) {
+        themeButton.textContent = "🌙 Dark";
+    }
 
 }
 
@@ -127,30 +52,94 @@ if (savedTheme === "dark") {
 // Dark Mode Toggle
 // =========================================
 
-themeButton.addEventListener("click", function () {
+if (themeButton) {
 
-    document.body.classList.toggle("dark");
+    themeButton.addEventListener("click", function () {
+
+        document.body.classList.toggle("dark");
+
+        if (document.body.classList.contains("dark")) {
+
+            themeButton.textContent = "☀️ Light";
+
+            localStorage.setItem("theme", "dark");
+
+        } else {
+
+            themeButton.textContent = "🌙 Dark";
+
+            localStorage.setItem("theme", "light");
+
+        }
+
+    });
+
+}
 
 
-    if (document.body.classList.contains("dark")) {
+// =========================================
+// Hamburger Menu
+// =========================================
 
-        themeButton.textContent = "☀️ Light Mode";
+if (menuButton && navMenu) {
 
-        localStorage.setItem(
-            "theme",
-            "dark"
-        );
+    menuButton.addEventListener("click", function () {
 
-    } else {
+        navMenu.classList.toggle("active");
 
-        themeButton.textContent = "🌙 Dark Mode";
+        if (navMenu.classList.contains("active")) {
 
-        localStorage.setItem(
-            "theme",
-            "light"
-        );
+            menuButton.textContent = "✕";
 
-    }
+            menuButton.setAttribute(
+                "aria-label",
+                "Close Menu"
+            );
+
+        } else {
+
+            menuButton.textContent = "☰";
+
+            menuButton.setAttribute(
+                "aria-label",
+                "Open Menu"
+            );
+
+        }
+
+    });
+
+}
+
+
+// =========================================
+// Close Mobile Menu After Clicking Link
+// =========================================
+
+const navLinks = document.querySelectorAll("nav ul li a");
+
+navLinks.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        if (navMenu && navMenu.classList.contains("active")) {
+
+            navMenu.classList.remove("active");
+
+            if (menuButton) {
+
+                menuButton.textContent = "☰";
+
+                menuButton.setAttribute(
+                    "aria-label",
+                    "Open Menu"
+                );
+
+            }
+
+        }
+
+    });
 
 });
 
@@ -167,104 +156,90 @@ const emailPattern =
 // Contact Form Validation
 // =========================================
 
-form.addEventListener("submit", function (event) {
+if (
+    form &&
+    nameInput &&
+    emailInput &&
+    messageInput &&
+    formMessage
+) {
 
-    event.preventDefault();
+    form.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const name = nameInput.value.trim();
+
+        const email = emailInput.value.trim();
+
+        const message = messageInput.value.trim();
+
+        formMessage.textContent = "";
 
 
-    const name =
-        nameInput.value.trim();
+        // Name Validation
+
+        if (name === "") {
+
+            formMessage.style.color = "red";
+
+            formMessage.textContent =
+                "Please enter your name.";
+
+            return;
+
+        }
 
 
-    const email =
-        emailInput.value.trim();
+        // Email Validation
+
+        if (email === "") {
+
+            formMessage.style.color = "red";
+
+            formMessage.textContent =
+                "Please enter your email.";
+
+            return;
+
+        }
 
 
-    const message =
-        messageInput.value.trim();
+        if (!emailPattern.test(email)) {
+
+            formMessage.style.color = "red";
+
+            formMessage.textContent =
+                "Please enter a valid email address.";
+
+            return;
+
+        }
 
 
-    // Clear Previous Message
+        // Message Validation
 
-    formMessage.textContent = "";
+        if (message === "") {
+
+            formMessage.style.color = "red";
+
+            formMessage.textContent =
+                "Please enter your message.";
+
+            return;
+
+        }
 
 
-    // =====================================
-    // Name Validation
-    // =====================================
+        // Success
 
-    if (name === "") {
-
-        formMessage.style.color = "red";
+        formMessage.style.color = "green";
 
         formMessage.textContent =
-            "Please enter your name.";
+            "Message sent successfully!";
 
-        return;
+        form.reset();
 
-    }
+    });
 
-
-    // =====================================
-    // Email Empty Validation
-    // =====================================
-
-    if (email === "") {
-
-        formMessage.style.color = "red";
-
-        formMessage.textContent =
-            "Please enter your email.";
-
-        return;
-
-    }
-
-
-    // =====================================
-    // Email Format Validation
-    // =====================================
-
-    if (!emailPattern.test(email)) {
-
-        formMessage.style.color = "red";
-
-        formMessage.textContent =
-            "Please enter a valid email address.";
-
-        return;
-
-    }
-
-
-    // =====================================
-    // Message Validation
-    // =====================================
-
-    if (message === "") {
-
-        formMessage.style.color = "red";
-
-        formMessage.textContent =
-            "Please enter your message.";
-
-        return;
-
-    }
-
-
-    // =====================================
-    // Success Message
-    // =====================================
-
-    formMessage.style.color = "green";
-
-    formMessage.textContent =
-        "Message sent successfully!";
-
-
-    // Reset Form
-
-    form.reset();
-
-});
+}
