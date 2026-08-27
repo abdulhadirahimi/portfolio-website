@@ -1,4 +1,19 @@
 // =========================================
+// Hamburger Menu
+// =========================================
+
+const menuButton =
+    document.getElementById("menu-toggle");
+
+const navMenu =
+    document.querySelector("nav ul");
+
+menuButton.addEventListener("click", function () {
+
+    navMenu.classList.toggle("active");
+
+});
+// =========================================
 // Portfolio Website JavaScript
 // Author: Abdulhadi Rahimi
 // =========================================

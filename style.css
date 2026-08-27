@@ -1293,3 +1293,73 @@ body.dark textarea::placeholder {
     }
 
 }
+/* ==========================================================
+   Hamburger Menu
+========================================================== */
+
+#menu-toggle {
+
+    display: none;
+
+    background: transparent;
+
+    color: white;
+
+    border: none;
+
+    font-size: 32px;
+
+    cursor: pointer;
+
+}
+
+
+/* ==========================================================
+   Mobile Header
+========================================================== */
+
+@media (max-width: 768px) {
+
+    nav {
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+    }
+
+    #menu-toggle {
+
+        display: block;
+
+        margin-left: auto;
+
+        font-size: 32px;
+
+    }
+
+    nav ul {
+
+        display: none;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 15px;
+
+        padding: 20px 0;
+
+    }
+
+    nav ul.active {
+
+        display: flex;
+
+    }
+
+}
