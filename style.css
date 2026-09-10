@@ -1,1369 +1,1300 @@
-/* ==========================================================
-   Portfolio Website
-   Author: Abdulhadi Rahimi
-   Description: Professional Portfolio Website Styles
-========================================================== */
-
-
-/* ==========================================================
-   CSS Variables
-========================================================== */
-
-:root {
-
-    --primary-color: #2563eb;
-    --primary-hover: #1d4ed8;
-
-    --background-color: #f8fafc;
-    --card-color: #ffffff;
-
-    --text-color: #111827;
-    --text-light: #6b7280;
-
-    --header-color: #111827;
-
-    --border-radius: 10px;
-
-    --box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.1);
-
-    --transition:
-        all 0.3s ease;
-
-}
-
-
-/* ==========================================================
-   Global Reset
-========================================================== */
-
-* {
-
-    margin: 0;
-    padding: 0;
-
-    box-sizing: border-box;
-
-}
-
-
-html {
-
-    scroll-behavior: smooth;
-
-}
-
-
-body {
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    background: var(--background-color);
-
-    color: var(--text-color);
-
-    line-height: 1.7;
-
-}
-
-
-/* ==========================================================
-   Images
-========================================================== */
-
-img {
-
-    max-width: 100%;
-
-    display: block;
-
-}
-
-
-/* ==========================================================
-   Links
-========================================================== */
-
-a {
-
-    text-decoration: none;
-
-}
-
-
-/* ==========================================================
-   Lists
-========================================================== */
-
-ul {
-
-    list-style: none;
-
-}
-
-
-/* ==========================================================
-   Buttons
-========================================================== */
-
-.btn {
-
-    display: inline-block;
-
-    margin-top: 25px;
-
-    margin-right: 10px;
-
-    padding: 12px 28px;
-
-    background: var(--primary-color);
-
-    color: white;
-
-    border-radius: var(--border-radius);
-
-    transition: var(--transition);
-
-    font-weight: bold;
-
-}
-
-
-.btn:hover {
-
-    background: var(--primary-hover);
-
-    transform: translateY(-3px);
-
-}
-
-
-/* ==========================================================
-   Sections
-========================================================== */
-
-section {
-
-    padding: 90px 10%;
-
-}
-
-
-/* ==========================================================
-   Section Titles
-========================================================== */
-
-section h2 {
-
-    font-size: 38px;
-
-    text-align: center;
-
-    margin-bottom: 40px;
-
-}
-
-
-/* ==========================================================
-   Header
-========================================================== */
-
-header {
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 1000;
-
-    background: var(--header-color);
-
-    box-shadow: var(--box-shadow);
-
-}
-
-
-/* ==========================================================
-   Navigation
-========================================================== */
-
-nav {
-
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding: 18px 30px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-}
-
-
-.logo {
-
-    color: white;
-
-    font-size: 28px;
-
-    font-weight: bold;
-
-}
-
-
-nav ul {
-
-    display: flex;
-
-    gap: 28px;
-
-}
-
-
-nav ul li a {
-
-    color: white;
-
-    transition: var(--transition);
-
-    font-weight: 500;
-
-}
-
-
-nav ul li a:hover {
-
-    color: var(--primary-color);
-
-}
-
-/* ==========================================================
-   Hamburger Menu
-========================================================== */
-
-.menu-toggle {
-
-    display: none;
-
-    background: transparent;
-
-    color: white;
-
-    border: none;
-
-    font-size: 28px;
-
-    cursor: pointer;
-
-    padding: 5px;
-
-}
-
-
-/* ==========================================================
-   Dark Mode Button
-========================================================== */
-
-#theme-toggle {
-
-    background: var(--primary-color);
-
-    color: white;
-
-    border: none;
-
-    padding: 5px 5px;
-
-    border-radius: var(--border-radius);
-
-    cursor: pointer;
-
-    transition: var(--transition);
-
-}
-
-
-#theme-toggle:hover {
-
-    background: var(--primary-hover);
-
-}
-
-
-/* ==========================================================
-   Home Section
-========================================================== */
-
-#home {
-
-    min-height: 100vh;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-}
-
-
-.hero-content {
-
-    max-width: 800px;
-
-}
-
-
-.hero-content h1 {
-
-    font-size: 60px;
-
-    margin: 20px 0;
-
-}
-
-
-.hero-content h2 {
-
-    font-size: 30px;
-
-    margin-bottom: 15px;
-
-    color: var(--primary-color);
-
-}
-
-
-.hero-content p {
-
-    font-size: 20px;
-
-    color: var(--text-light);
-
-    margin-bottom: 15px;
-
-}
-
-
-/* ==========================================================
-   About Section
-========================================================== */
-
-#about {
-
-    background: var(--card-color);
-
-}
-
-
-#about p {
-
-    max-width: 800px;
-
-    margin: auto;
-
-    text-align: center;
-
-    font-size: 18px;
-
-    color: var(--text-light);
-
-}
-
-
-/* ==========================================================
-   Skills Section
-========================================================== */
-
-#skills {
-
-    background: var(--background-color);
-
-}
-
-
-.skills-container {
-
-    display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-
-    gap: 25px;
-
-    margin-top: 40px;
-
-}
-
-
-.skill {
-
-    background: var(--card-color);
-
-    padding: 30px 20px;
-
-    text-align: center;
-
-    border-radius: var(--border-radius);
-
-    box-shadow: var(--box-shadow);
-
-    font-size: 20px;
-
-    font-weight: bold;
-
-    transition: var(--transition);
-
-}
-
-
-.skill:hover {
-
-    transform: translateY(-8px);
-
-    background: var(--primary-color);
-
-    color: white;
-
-}
-
-
-/* ==========================================================
-   Projects Section
-========================================================== */
-
-#projects {
-
-    background: var(--card-color);
-
-}
-
-
-/* Projects Container */
-
-.projects-container {
-
-    display: grid;
-
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(300px, 1fr)
-    );
-
-    gap: 30px;
-
-    margin-top: 40px;
-
-}
-
-
-/* Project Card */
-
-.project {
-
-    background: var(--background-color);
-
-    border-radius: var(--border-radius);
-
-    padding: 30px;
-
-    box-shadow: var(--box-shadow);
-
-    transition: var(--transition);
-
-    overflow: hidden;
-
-}
-
-
-/* Project Hover Effect */
-
-.project:hover {
-
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 10px 25px rgba(0,0,0,0.15);
-
-}
-
-
-/* Project Title */
-
-.project h3 {
-
-    color: var(--primary-color);
-
-    font-size: 24px;
-
-    margin-bottom: 15px;
-
-}
-
-
-/* Project Description */
-
-.project p {
-
-    color: var(--text-light);
-
-    margin-bottom: 25px;
-
-    line-height: 1.7;
-
-}
-
-
-/* Project Buttons */
-
-.project .btn {
-
-    margin-top: 10px;
-
-}
-
-
-/* Button Hover */
-
-.project .btn:hover {
-
-    transform: translateY(-3px);
-
-}
-
-
-/* ==========================================================
-   Resume Section
-========================================================== */
-
-#resume {
-
-    background: var(--background-color);
-
-    text-align: center;
-
-}
-
-
-#resume p {
-
-    max-width: 700px;
-
-    margin: 0 auto 30px;
-
-    color: var(--text-light);
-
-    font-size: 18px;
-
-}
-
-
-#resume .btn {
-
-    margin-top: 10px;
-
-}
-
-
-/* ==========================================================
-   Contact Section
-========================================================== */
-
-#contact {
-
-    background: var(--card-color);
-
-}
-
-
-form {
-
-    max-width: 700px;
-
-    margin: auto;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 20px;
-
-}
-
-
-input,
-textarea {
-
-    width: 100%;
-
-    padding: 15px;
-
-    font-size: 16px;
-
-    font-family: inherit;
-
-    border: 1px solid #d1d5db;
-
-    border-radius: var(--border-radius);
-
-    outline: none;
-
-    transition: var(--transition);
-
-}
-
-
-input:focus,
-textarea:focus {
-
-    border-color: var(--primary-color);
-
-    box-shadow:
-        0 0 5px rgba(37, 99, 235, 0.3);
-
-}
-
-
-textarea {
-
-    resize: vertical;
-
-    min-height: 150px;
-
-}
-
-
-form button {
-
-    background: var(--primary-color);
-
-    color: white;
-
-    border: none;
-
-    padding: 15px;
-
-    border-radius: var(--border-radius);
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: var(--transition);
-
-}
-
-
-form button:hover {
-
-    background: var(--primary-hover);
-
-}
-
-
-#form-message {
-
-    margin-top: 10px;
-
-    text-align: center;
-
-    font-weight: bold;
-
-}
-
-
-/* ==========================================================
-   WhatsApp Button
-========================================================== */
-
-.whatsapp-btn {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    background: #25D366;
-
-    color: white;
-
-    padding: 12px 25px;
-
-    border-radius: 30px;
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    margin-bottom: 30px;
-
-    transition: all 0.3s ease;
-
-}
-
-
-.whatsapp-btn:hover {
-
-    background: #128C7E;
-
-    transform: translateY(-5px);
-
-}
-
-
-/* ==========================================================
-   Footer
-========================================================== */
-
-footer {
-
-    background: var(--header-color);
-
-    color: white;
-
-    text-align: center;
-
-    padding: 25px;
-
-}
-
-
-/* ==========================================================
-   Dark Mode
-========================================================== */
-
-body.dark {
-
-    --background-color: #111827;
-
-    --card-color: #1f2937;
-
-    --text-color: #f9fafb;
-
-    --text-light: #d1d5db;
-
-    --header-color: #0f172a;
-
-}
-
-
-body.dark .project,
-body.dark .skill,
-body.dark #about,
-body.dark #projects,
-body.dark #contact {
-
-    background: var(--card-color);
-
-}
-
-
-body.dark input,
-body.dark textarea {
-
-    background: #374151;
-
-    color: white;
-
-    border-color: #4b5563;
-
-}
-
-
-body.dark input::placeholder,
-body.dark textarea::placeholder {
-
-    color: #d1d5db;
-
-}
-
-
-/* ==========================================================
-   Text Selection
-========================================================== */
-
-::selection {
-
-    background: var(--primary-color);
-
-    color: white;
-
-}
-
-
-/* ==========================================================
-   Scrollbar
-========================================================== */
-
-::-webkit-scrollbar {
-
-    width: 10px;
-
-}
-
-
-::-webkit-scrollbar-track {
-
-    background: #e5e7eb;
-
-}
-
-
-::-webkit-scrollbar-thumb {
-
-    background: var(--primary-color);
-
-    border-radius: 10px;
-
-}
-
-
-::-webkit-scrollbar-thumb:hover {
-
-    background: var(--primary-hover);
-
-}
-
-
-/* ==========================================================
-   Responsive Design
-========================================================== */
-
-
-/* =========================
-   Tablet
-   Screens up to 992px
-========================= */
-
-@media (max-width: 992px) {
-
-    nav {
-
-        flex-wrap: wrap;
-
-        gap: 15px;
-
-    }
-
-    nav ul {
-
-        flex-wrap: wrap;
-
-        justify-content: center;
-
-        gap: 15px 20px;
-
-    }
-
-    section {
-
-        padding: 70px 7%;
-
-    }
-
-    .skills-container {
-
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-
-    .projects-container {
-
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-
-}
-
-
-/* =========================
-   Mobile
-   Screens up to 768px
-========================= */
-
-@media (max-width: 768px) {
-
-
-    /* Header */
-
-    header {
-
-        padding: 0;
-
-    }
-
-
-    nav {
-
-        position: relative;
-
-        flex-direction: row;
-
-        justify-content: space-between;
-
-        align-items: center;
-
-        padding: 15px 20px;
-
-        gap: 0;
-
-    }
-
-
-    /* Hamburger */
-
-    .menu-toggle {
-
-        display: block;
-
-        order: 2;
-
-    }
-
-
-    /* Navigation Menu */
-
-    nav ul {
-
-        display: none;
-
-        position: absolute;
-
-        top: 100%;
-
-        left: 0;
-
-        width: 100%;
-
-        flex-direction: column;
-
-        align-items: center;
-
-        justify-content: center;
-
-        gap: 15px;
-
-        padding: 20px;
-
-        background: var(--header-color);
-
-        box-shadow: var(--box-shadow);
-
-    }
-
-
-    /* Open Menu */
-
-    nav ul.active {
-
-        display: flex;
-
-    }
-
-
-    nav ul li a {
-
-        font-size: 16px;
-
-    }
-
-
-    /* Dark Mode Button */
-
-    #theme-toggle {
-
-        order: 3;
-
-        font-size: 13px;
-
-        padding: 8px 12px;
-
-    }
-
-
-    /* Sections */
-
-    section {
-
-        padding: 60px 20px;
-
-    }
-
-
-    section h2 {
-
-        font-size: 30px;
-
-    }
-
-
-    /* Home */
-
-    .hero-content {
-
-        width: 100%;
-
-        text-align: center;
-
-    }
-
-
-    .hero-content h1 {
-
-        font-size: 42px;
-
-        line-height: 1.2;
-
-    }
-
-
-    .hero-content h2 {
-
-        font-size: 24px;
-
-    }
-
-
-    .hero-content p {
-
-        font-size: 18px;
-
-    }
-
-
-    /* Buttons */
-
-    .btn {
-
-        display: block;
-
-        width: fit-content;
-
-        max-width: 100%;
-
-        margin: 15px auto;
-
-    }
-
-
-    /* Skills */
-
-    .skills-container {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    /* Projects */
-
-    .projects-container {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    /* Contact */
-
-    form {
-
-        width: 100%;
-
-    }
-
-
-    input,
-    textarea,
-    form button {
-
-        width: 100%;
-
-    }
-
-}
-
-
-/* =========================
-   Small Mobile
-   Screens up to 576px
-========================= */
-
-@media (max-width: 576px) {
-
-
-    /* Header */
-
-    header {
-
-        padding: 0;
-
-    }
-
-
-    nav {
-
-        padding: 12px 15px;
-
-        gap: 0;
-
-    }
-
-
-    nav ul {
-
-        flex-direction: column;
-
-        gap: 15px;
-
-        text-align: center;
-
-    }
-
-
-    nav ul li a {
-
-        font-size: 15px;
-
-    }
-
-
-    .menu-toggle {
-
-        font-size: 26px;
-
-    }
-
-
-    #theme-toggle {
-
-        font-size: 12px;
-
-        padding: 7px 10px;
-
-    }
-
-
-    /* Home */
-
-    .hero-content h1 {
-
-        font-size: 34px;
-
-    }
-
-
-    .hero-content h2 {
-
-        font-size: 20px;
-
-    }
-
-
-    .hero-content p {
-
-        font-size: 16px;
-
-    }
-
-
-    /* Sections */
-
-    section {
-
-        padding: 50px 15px;
-
-    }
-
-
-    section h2 {
-
-        font-size: 26px;
-
-    }
-
-
-    /* Buttons */
-
-    .btn {
-
-        width: 100%;
-
-        max-width: 280px;
-
-        text-align: center;
-
-    }
-
-
-    /* Contact */
-
-    input,
-    textarea,
-    form button {
-
-        font-size: 15px;
-
-    }
-
-}
-
-
-/* =========================
-   Very Small Mobile
-   Screens up to 400px
-========================= */
-
-@media (max-width: 400px) {
-
-
-    nav {
-
-        padding: 10px;
-
-    }
-
-
-    nav ul {
-
-        gap: 12px;
-
-    }
-
-
-    nav ul li a {
-
-        font-size: 14px;
-
-    }
-
-
-    .logo {
-
-        font-size: 24px;
-
-    }
-
-
-    .menu-toggle {
-
-        font-size: 24px;
-
-    }
-
-
-    #theme-toggle {
-
-        background: var(--primary-color);
-        color: white;
-        border: none;
-        border-radius: var(--border-radius);
-        cursor: pointer;
-        transition: var(--transition);
-        font-size: 11px;
-        padding: 6px 8px;
-
-    }
-
-
-    .hero-content h1 {
-
-        font-size: 30px;
-
-    }
-
-
-    .hero-content h2 {
-
-        font-size: 18px;
-
-    }
-
-
-    .hero-content p {
-
-        font-size: 15px;
-
-    }
-
-}
-/* ==========================================================
-   Hamburger Menu
-========================================================== */
-
-#menu-toggle {
-
-    display: none;
-
-    background: transparent;
-
-    color: white;
-
-    border: none;
-
-    font-size: 32px;
-
-    cursor: pointer;
-
-}
-
-
-/* ==========================================================
-   Mobile Header
-========================================================== */
-
-@media (max-width: 768px) {
-
-    nav {
-
-        flex-direction: row;
-
-        justify-content: space-between;
-
-        align-items: center;
-
-    }
-
-    #menu-toggle {
-
-        display: block;
-
-        margin-left: auto;
-
-        font-size: 32px;
-
-    }
-
-    nav ul {
-
-        display: none;
-
-        width: 100%;
-
-        flex-direction: column;
-
-        text-align: center;
-
-        gap: 15px;
-
-        padding: 20px 0;
-
-    }
-
-    nav ul.active {
-
-        display: flex;
-
-    }
-
+/* ========================================================== 
+   Portfolio Website 
+   Author: Abdulhadi Rahimi 
+   Description: Professional Portfolio Website Styles 
+========================================================== */ 
+ 
+ 
+/* ========================================================== 
+   CSS Variables 
+========================================================== */ 
+ 
+:root { 
+ 
+    --primary-color: #2563eb; 
+    --primary-hover: #1d4ed8; 
+ 
+    --background-color: #f8fafc; 
+    --card-color: #ffffff; 
+ 
+    --text-color: #111827; 
+    --text-light: #6b7280; 
+ 
+    --header-color: #111827; 
+ 
+    --border-radius: 10px; 
+ 
+    --box-shadow: 
+        0 5px 15px rgba(0, 0, 0, 0.1); 
+ 
+    --transition: 
+        all 0.3s ease; 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Global Reset 
+========================================================== */ 
+ 
+* { 
+ 
+    margin: 0; 
+    padding: 0; 
+ 
+    box-sizing: border-box; 
+ 
+} 
+ 
+ 
+html { 
+ 
+    scroll-behavior: smooth; 
+ 
+} 
+ 
+ 
+body { 
+ 
+    font-family: Arial, Helvetica, sans-serif; 
+ 
+    background: var(--background-color); 
+ 
+    color: var(--text-color); 
+ 
+    line-height: 1.7; 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Images 
+========================================================== */ 
+ 
+img { 
+ 
+    max-width: 100%; 
+ 
+    display: block; 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Links 
+========================================================== */ 
+ 
+a { 
+ 
+    text-decoration: none; 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Lists 
+========================================================== */ 
+ 
+ul { 
+ 
+    list-style: none; 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Buttons 
+========================================================== */ 
+ 
+.btn { 
+ 
+    display: inline-block; 
+ 
+    margin-top: 25px; 
+ 
+    margin-right: 10px; 
+ 
+    padding: 12px 28px; 
+ 
+    background: var(--primary-color); 
+ 
+    color: white; 
+ 
+    border-radius: var(--border-radius); 
+ 
+    transition: var(--transition); 
+ 
+    font-weight: bold; 
+ 
+} 
+ 
+ 
+.btn:hover { 
+ 
+    background: var(--primary-hover); 
+ 
+    transform: translateY(-3px); 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Sections 
+========================================================== */ 
+ 
+section { 
+ 
+    padding: 90px 10%; 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Section Titles 
+========================================================== */ 
+ 
+section h2 { 
+ 
+    font-size: 38px; 
+ 
+    text-align: center; 
+ 
+    margin-bottom: 40px; 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Header 
+========================================================== */ 
+ 
+header { 
+ 
+    position: sticky; 
+ 
+    top: 0; 
+ 
+    z-index: 1000; 
+ 
+    background: var(--header-color); 
+ 
+    box-shadow: var(--box-shadow); 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Navigation 
+========================================================== */ 
+ 
+nav { 
+ 
+    max-width: 1200px; 
+ 
+    margin: auto; 
+ 
+    padding: 18px 30px; 
+ 
+    display: flex; 
+ 
+    justify-content: space-between; 
+ 
+    align-items: center; 
+ 
+} 
+ 
+ 
+.logo { 
+ 
+    color: white; 
+ 
+    font-size: 28px; 
+ 
+    font-weight: bold; 
+ 
+} 
+ 
+ 
+nav ul { 
+ 
+    display: flex; 
+ 
+    gap: 28px; 
+ 
+} 
+ 
+ 
+nav ul li a { 
+ 
+    color: white; 
+ 
+    transition: var(--transition); 
+ 
+    font-weight: 500; 
+ 
+} 
+ 
+ 
+nav ul li a:hover { 
+ 
+    color: var(--primary-color); 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Hamburger Menu 
+========================================================== */ 
+ 
+.menu-toggle { 
+ 
+    display: none; 
+ 
+    background: transparent; 
+ 
+    color: white; 
+ 
+    border: none; 
+ 
+    font-size: 28px; 
+ 
+    cursor: pointer; 
+ 
+    padding: 5px; 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Dark Mode Button 
+========================================================== */ 
+ 
+#theme-toggle { 
+ 
+    background: var(--primary-color); 
+ 
+    color: white; 
+ 
+    border: none; 
+ 
+    padding: 5px 5px; 
+ 
+    border-radius: var(--border-radius); 
+ 
+    cursor: pointer; 
+ 
+    transition: var(--transition); 
+ 
+} 
+ 
+ 
+#theme-toggle:hover { 
+ 
+    background: var(--primary-hover); 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Home Section 
+========================================================== */ 
+ 
+#home { 
+ 
+    min-height: 100vh; 
+ 
+    display: flex; 
+ 
+    justify-content: center; 
+ 
+    align-items: center; 
+ 
+    text-align: center; 
+ 
+} 
+ 
+ 
+.hero-content { 
+ 
+    max-width: 800px; 
+ 
+} 
+ 
+ 
+.hero-content h1 { 
+ 
+    font-size: 60px; 
+ 
+    margin: 20px 0; 
+ 
+} 
+ 
+ 
+.hero-content h2 { 
+ 
+    font-size: 30px; 
+ 
+    margin-bottom: 15px; 
+ 
+    color: var(--primary-color); 
+ 
+} 
+ 
+ 
+.hero-content p { 
+ 
+    font-size: 20px; 
+ 
+    color: var(--text-light); 
+ 
+    margin-bottom: 15px; 
+ 
+}
+/* ========================================================== 
+   About Section 
+========================================================== */ 
+ 
+#about { 
+ 
+    background: var(--card-color); 
+ 
+} 
+ 
+ 
+#about p { 
+ 
+    max-width: 800px; 
+ 
+    margin: auto; 
+ 
+    text-align: center; 
+ 
+    font-size: 18px; 
+ 
+    color: var(--text-light); 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Skills Section 
+========================================================== */ 
+ 
+#skills { 
+ 
+    background: var(--background-color); 
+ 
+} 
+ 
+ 
+.skills-container { 
+ 
+    display: grid; 
+ 
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+ 
+    gap: 25px; 
+ 
+    margin-top: 40px; 
+ 
+} 
+ 
+ 
+.skill { 
+ 
+    background: var(--card-color); 
+ 
+    padding: 30px 20px; 
+ 
+    text-align: center; 
+ 
+    border-radius: var(--border-radius); 
+ 
+    box-shadow: var(--box-shadow); 
+ 
+    font-size: 20px; 
+ 
+    font-weight: bold; 
+ 
+    transition: var(--transition); 
+ 
+} 
+ 
+ 
+.skill:hover { 
+ 
+    transform: translateY(-8px); 
+ 
+    background: var(--primary-color); 
+ 
+    color: white; 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Projects Section 
+========================================================== */ 
+ 
+#projects { 
+ 
+    background: var(--card-color); 
+ 
+} 
+ 
+ 
+/* Projects Container */ 
+ 
+.projects-container { 
+ 
+    display: grid; 
+ 
+    grid-template-columns: repeat( 
+        auto-fit, 
+        minmax(300px, 1fr) 
+    ); 
+ 
+    gap: 30px; 
+ 
+    margin-top: 40px; 
+ 
+} 
+ 
+ 
+/* Project Card */ 
+ 
+.project { 
+ 
+    background: var(--background-color); 
+ 
+    border-radius: var(--border-radius); 
+ 
+    padding: 30px; 
+ 
+    box-shadow: var(--box-shadow); 
+ 
+    transition: var(--transition); 
+ 
+    overflow: hidden; 
+ 
+} 
+ 
+ 
+/* Project Hover Effect */ 
+ 
+.project:hover { 
+ 
+    transform: translateY(-8px); 
+ 
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.15); 
+ 
+} 
+ 
+ 
+/* Project Title */ 
+ 
+.project h3 { 
+ 
+    color: var(--primary-color); 
+ 
+    font-size: 24px; 
+ 
+    margin-bottom: 15px; 
+ 
+} 
+ 
+ 
+/* Project Description */ 
+ 
+.project p { 
+ 
+    color: var(--text-light); 
+ 
+    margin-bottom: 25px; 
+ 
+    line-height: 1.7; 
+ 
+} 
+ 
+ 
+/* Project Buttons */ 
+ 
+.project .btn { 
+ 
+    margin-top: 10px; 
+ 
+} 
+ 
+ 
+/* Button Hover */ 
+ 
+.project .btn:hover { 
+ 
+    transform: translateY(-3px); 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Resume Section 
+========================================================== */ 
+ 
+#resume { 
+ 
+    background: var(--background-color); 
+ 
+    text-align: center; 
+ 
+} 
+ 
+ 
+#resume p { 
+ 
+    max-width: 700px; 
+ 
+    margin: 0 auto 30px; 
+ 
+    color: var(--text-light); 
+ 
+    font-size: 18px; 
+ 
+} 
+ 
+ 
+#resume .btn { 
+ 
+    margin-top: 10px; 
+ 
+}
+/* ========================================================== 
+   Contact Section 
+========================================================== */ 
+ 
+#contact { 
+ 
+    background: var(--card-color); 
+ 
+} 
+ 
+ 
+form { 
+ 
+    max-width: 700px; 
+ 
+    margin: auto; 
+ 
+    display: flex; 
+ 
+    flex-direction: column; 
+ 
+    gap: 20px; 
+ 
+} 
+ 
+ 
+input, 
+textarea { 
+ 
+    width: 100%; 
+ 
+    padding: 15px; 
+ 
+    font-size: 16px; 
+ 
+    font-family: inherit; 
+ 
+    border: 1px solid #d1d5db; 
+ 
+    border-radius: var(--border-radius); 
+ 
+    outline: none; 
+ 
+    transition: var(--transition); 
+ 
+} 
+ 
+ 
+input:focus, 
+textarea:focus { 
+ 
+    border-color: var(--primary-color); 
+ 
+    box-shadow: 
+        0 0 5px rgba(37, 99, 235, 0.3); 
+ 
+} 
+ 
+ 
+textarea { 
+ 
+    resize: vertical; 
+ 
+    min-height: 150px; 
+ 
+} 
+ 
+ 
+form button { 
+ 
+    background: var(--primary-color); 
+ 
+    color: white; 
+ 
+    border: none; 
+ 
+    padding: 15px; 
+ 
+    border-radius: var(--border-radius); 
+ 
+    font-size: 16px; 
+ 
+    font-weight: bold; 
+ 
+    cursor: pointer; 
+ 
+    transition: var(--transition); 
+ 
+} 
+ 
+ 
+form button:hover { 
+ 
+    background: var(--primary-hover); 
+ 
+} 
+ 
+ 
+#form-message { 
+ 
+    margin-top: 10px; 
+ 
+    text-align: center; 
+ 
+    font-weight: bold; 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   WhatsApp Button 
+========================================================== */ 
+ 
+.whatsapp-btn { 
+ 
+    display: inline-flex; 
+ 
+    align-items: center; 
+ 
+    justify-content: center; 
+ 
+    gap: 10px; 
+ 
+    background: #25D366; 
+ 
+    color: white; 
+ 
+    padding: 12px 25px; 
+ 
+    border-radius: 30px; 
+ 
+    font-size: 18px; 
+ 
+    font-weight: bold; 
+ 
+    margin-bottom: 30px; 
+ 
+    transition: all 0.3s ease; 
+ 
+} 
+ 
+ 
+.whatsapp-btn:hover { 
+ 
+    background: #128C7E; 
+ 
+    transform: translateY(-5px); 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Footer 
+========================================================== */ 
+ 
+footer { 
+ 
+    background: var(--header-color); 
+ 
+    color: white; 
+ 
+    text-align: center; 
+ 
+    padding: 25px; 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Dark Mode 
+========================================================== */ 
+ 
+body.dark { 
+ 
+    --background-color: #111827; 
+ 
+    --card-color: #1f2937; 
+ 
+    --text-color: #f9fafb; 
+ 
+    --text-light: #d1d5db; 
+ 
+    --header-color: #0f172a; 
+ 
+} 
+ 
+ 
+body.dark .project, 
+body.dark .skill, 
+body.dark #about, 
+body.dark #projects, 
+body.dark #contact { 
+ 
+    background: var(--card-color); 
+ 
+} 
+ 
+ 
+body.dark input, 
+body.dark textarea { 
+ 
+    background: #374151; 
+ 
+    color: white; 
+ 
+    border-color: #4b5563; 
+ 
+} 
+ 
+ 
+body.dark input::placeholder, 
+body.dark textarea::placeholder { 
+ 
+    color: #d1d5db; 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Text Selection 
+========================================================== */ 
+ 
+::selection { 
+ 
+    background: var(--primary-color); 
+ 
+    color: white; 
+ 
+} 
+ 
+ 
+/* ========================================================== 
+   Scrollbar 
+========================================================== */ 
+ 
+::-webkit-scrollbar { 
+ 
+    width: 10px; 
+ 
+} 
+ 
+ 
+::-webkit-scrollbar-track { 
+ 
+    background: #e5e7eb; 
+ 
+} 
+ 
+ 
+::-webkit-scrollbar-thumb { 
+ 
+    background: var(--primary-color); 
+ 
+    border-radius: 10px; 
+ 
+} 
+ 
+ 
+::-webkit-scrollbar-thumb:hover { 
+ 
+    background: var(--primary-hover); 
+ 
+}
+/* ========================================================== 
+   Responsive Design 
+========================================================== */ 
+ 
+ 
+/* ========================= 
+   Tablet 
+   Screens up to 992px 
+========================= */ 
+ 
+@media (max-width: 992px) { 
+ 
+    nav { 
+ 
+        flex-wrap: wrap; 
+ 
+        gap: 15px; 
+ 
+    } 
+ 
+    nav ul { 
+ 
+        flex-wrap: wrap; 
+ 
+        justify-content: center; 
+ 
+        gap: 15px 20px; 
+ 
+    } 
+ 
+    section { 
+ 
+        padding: 70px 7%; 
+ 
+    } 
+ 
+    .skills-container { 
+ 
+        grid-template-columns: repeat(2, 1fr); 
+ 
+    } 
+ 
+    .projects-container { 
+ 
+        grid-template-columns: repeat(2, 1fr); 
+ 
+    } 
+ 
+} 
+ 
+ 
+/* ========================= 
+   Mobile 
+   Screens up to 768px 
+========================= */ 
+ 
+@media (max-width: 768px) { 
+ 
+ 
+    /* Header */ 
+ 
+    header { 
+ 
+        padding: 0; 
+ 
+    } 
+ 
+ 
+    nav { 
+ 
+        position: relative; 
+ 
+        flex-direction: row; 
+ 
+        justify-content: space-between; 
+ 
+        align-items: center; 
+ 
+        padding: 15px 20px; 
+ 
+        gap: 0; 
+ 
+    } 
+ 
+ 
+    /* Hamburger */ 
+ 
+    .menu-toggle { 
+ 
+        display: block; 
+ 
+        order: 2; 
+ 
+    } 
+ 
+ 
+    /* Navigation Menu */ 
+ 
+    nav ul { 
+ 
+        display: none; 
+ 
+        position: absolute; 
+ 
+        top: 100%; 
+ 
+        left: 0; 
+ 
+        width: 100%; 
+ 
+        flex-direction: column; 
+ 
+        align-items: center; 
+ 
+        justify-content: center; 
+ 
+        gap: 15px; 
+ 
+        padding: 20px; 
+ 
+        background: var(--header-color); 
+ 
+        box-shadow: var(--box-shadow); 
+ 
+    } 
+ 
+ 
+    /* Open Menu */ 
+ 
+    nav ul.active { 
+ 
+        display: flex; 
+ 
+    } 
+ 
+ 
+    nav ul li a { 
+ 
+        font-size: 16px; 
+ 
+    } 
+ 
+ 
+    /* Dark Mode Button */ 
+ 
+    #theme-toggle { 
+ 
+        order: 3; 
+ 
+        font-size: 13px; 
+ 
+        padding: 8px 12px; 
+ 
+    } 
+ 
+ 
+    /* Sections */ 
+ 
+    section { 
+ 
+        padding: 60px 20px; 
+ 
+    } 
+ 
+ 
+    section h2 { 
+ 
+        font-size: 30px; 
+ 
+    } 
+ 
+ 
+    /* Home */ 
+ 
+    .hero-content { 
+ 
+        width: 100%; 
+ 
+        text-align: center; 
+ 
+    } 
+ 
+ 
+    .hero-content h1 { 
+ 
+        font-size: 42px; 
+ 
+        line-height: 1.2; 
+ 
+    } 
+ 
+ 
+    .hero-content h2 { 
+ 
+        font-size: 24px; 
+ 
+    } 
+ 
+ 
+    .hero-content p { 
+ 
+        font-size: 18px; 
+ 
+    } 
+ 
+ 
+    /* Buttons */ 
+ 
+    .btn { 
+ 
+        display: block; 
+ 
+        width: fit-content; 
+ 
+        max-width: 100%; 
+ 
+        margin: 15px auto; 
+ 
+    } 
+ 
+ 
+    /* Skills */ 
+ 
+    .skills-container { 
+ 
+        grid-template-columns: 1fr; 
+ 
+    } 
+ 
+ 
+    /* Projects */ 
+ 
+    .projects-container { 
+ 
+        grid-template-columns: 1fr; 
+ 
+    } 
+ 
+ 
+    /* Contact */ 
+ 
+    form { 
+ 
+        width: 100%; 
+ 
+    } 
+ 
+ 
+    input, 
+    textarea, 
+    form button { 
+ 
+        width: 100%; 
+ 
+    } 
+ 
+} 
+ 
+ 
+/* ========================= 
+   Small Mobile 
+   Screens up to 576px 
+========================= */ 
+ 
+@media (max-width: 576px) { 
+ 
+ 
+    /* Header */ 
+ 
+    header { 
+ 
+        padding: 0; 
+ 
+    } 
+ 
+ 
+    nav { 
+ 
+        padding: 12px 15px; 
+ 
+        gap: 0; 
+ 
+    } 
+ 
+ 
+    nav ul { 
+ 
+        flex-direction: column; 
+ 
+        gap: 15px; 
+ 
+        text-align: center; 
+ 
+    } 
+ 
+ 
+    nav ul li a { 
+ 
+        font-size: 15px; 
+ 
+    } 
+ 
+ 
+    .menu-toggle { 
+ 
+        font-size: 26px; 
+ 
+    } 
+ 
+ 
+    #theme-toggle { 
+ 
+        font-size: 12px; 
+ 
+        padding: 7px 10px; 
+ 
+    } 
+ 
+ 
+    /* Home */ 
+ 
+    .hero-content h1 { 
+ 
+        font-size: 34px; 
+ 
+    } 
+ 
+ 
+    .hero-content h2 { 
+ 
+        font-size: 20px; 
+ 
+    } 
+ 
+ 
+    .hero-content p { 
+ 
+        font-size: 16px; 
+ 
+    } 
+ 
+ 
+    /* Sections */ 
+ 
+    section { 
+ 
+        padding: 50px 15px; 
+ 
+    } 
+ 
+ 
+    section h2 { 
+ 
+        font-size: 26px; 
+ 
+    } 
+ 
+ 
+    /* Buttons */ 
+ 
+    .btn { 
+ 
+        width: 100%; 
+ 
+        max-width: 280px; 
+ 
+        text-align: center; 
+ 
+    } 
+ 
+ 
+    /* Contact */ 
+ 
+    input, 
+    textarea, 
+    form button { 
+ 
+        font-size: 15px; 
+ 
+    } 
+ 
+} 
+ 
+ 
+/* ========================= 
+   Very Small Mobile 
+   Screens up to 400px 
+========================= */ 
+ 
+@media (max-width: 400px) { 
+ 
+ 
+    nav { 
+ 
+        padding: 10px; 
+ 
+    } 
+ 
+ 
+    nav ul { 
+ 
+        gap: 12px; 
+ 
+    } 
+ 
+ 
+    nav ul li a { 
+ 
+        font-size: 14px; 
+ 
+    } 
+ 
+ 
+    .logo { 
+ 
+        font-size: 24px; 
+ 
+    } 
+ 
+ 
+    .menu-toggle { 
+ 
+        font-size: 24px; 
+ 
+    } 
+ 
+ 
+    #theme-toggle { 
+ 
+        background: var(--primary-color); 
+ 
+        color: white; 
+ 
+        border: none; 
+ 
+        border-radius: var(--border-radius); 
+ 
+        cursor: pointer; 
+ 
+        transition: var(--transition); 
+ 
+        font-size: 11px; 
+ 
+        padding: 6px 8px; 
+ 
+    } 
+ 
+ 
+    .hero-content h1 { 
+ 
+        font-size: 30px; 
+ 
+    } 
+ 
+ 
+    .hero-content h2 { 
+ 
+        font-size: 18px; 
+ 
+    } 
+ 
+ 
+    .hero-content p { 
+ 
+        font-size: 15px; 
+ 
+    } 
 }

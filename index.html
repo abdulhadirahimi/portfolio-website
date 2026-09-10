@@ -2,74 +2,108 @@
 <html lang="en">
 
 <head>
+    <!-- =========================
+        Basic Meta / SEO
+    ========================== -->
 
     <meta charset="UTF-8">
 
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0">
-
-
-    <!-- SEO Meta Tags -->
-
-    <meta
+    
+        <meta
         name="description"
-        content="Abdulhadi Rahimi Portfolio | Computer Science Graduate | Full-Stack Web Developer">
+        content="Abdulhadi Rahimi is a Computer Science graduate and aspiring Full-Stack Web Developer skilled in HTML, CSS, JavaScript, React, Git, and GitHub.">
 
     <meta
         name="keywords"
-        content="Portfolio, HTML, CSS, JavaScript, React, Web Developer">
+        content="Abdulhadi Rahimi, Web Developer, Full-Stack Web Developer, Computer Science Graduate, JavaScript Developer, React Developer, HTML, CSS, Git, GitHub, Afghanistan">
 
     <meta
         name="author"
         content="Abdulhadi Rahimi">
 
+    <meta
+        name="robots"
+        content="index, follow">
 
-    <!-- Mobile Browser Theme -->
+    <meta
+        name="googlebot"
+        content="index, follow">
+
+
+    <!-- =========================
+         Mobile Browser Theme
+    ========================== -->
 
     <meta
         name="theme-color"
         content="#2563eb">
 
 
-    <!-- Open Graph (Social Media Preview) -->
-
-    <meta
-        property="og:title"
-        content="Abdulhadi Rahimi | Portfolio">
-
-    <meta
-        property="og:description"
-        content="Computer Science Graduate and Full-Stack Web Developer">
+    <!-- =========================
+         Open Graph
+         Social Media Preview
+    ========================== -->
 
     <meta
         property="og:type"
         content="website">
 
     <meta
+        property="og:title"
+        content="Abdulhadi Rahimi | Full-Stack Web Developer">
+
+    <meta
+        property="og:description"
+        content="Computer Science graduate and aspiring Full-Stack Web Developer building responsive and modern web applications.">
+
+    <meta
         property="og:url"
         content="https://abdulhadirahimi.github.io/portfolio-website/">
 
     <meta
+        property="og:site_name"
+        content="Abdulhadi Rahimi | Portfolio">
+
+    <meta
         property="og:image"
-        content="assets/images/preview.png">
+        content="https://abdulhadirahimi.github.io/portfolio-website/assets/images/preview.png">
+
+    <meta
+        property="og:image:alt"
+        content="Abdulhadi Rahimi Portfolio">
 
 
-    <!-- Page Title -->
+    <!-- =========================
+         Canonical URL
+    ========================== -->
 
-    <title>
-        Abdulhadi_Rahimi_Portfolio
-    </title>
+    <link
+        rel="canonical"
+        href="https://abdulhadirahimi.github.io/portfolio-website/">
 
 
-    <!-- CSS File -->
+    <!-- =========================
+         Page Title
+    ========================== -->
+
+    <title>Abdulhadi Rahimi | Full-Stack Web Developer</title>
+
+
+    <!-- =========================
+         CSS File
+    ========================== -->
 
     <link
         rel="stylesheet"
         href="style.css">
 
 
-    <!-- Favicon -->
+    <!-- =========================
+         Favicon
+    ========================== -->
 
     <link
         rel="icon"
@@ -191,15 +225,15 @@
                 </h1>
 
                 <h2>
-                    Computer Science Graduate
+                    Aspiring Full-Stack Web Developer
                 </h2>
 
                 <p>
-                    Aspiring Full-Stack Web Developer
+                    Computer Science Graduate
                 </p>
 
                 <p>
-                    I build responsive and modern websites using
+                    I build responsive and modern web applications using
                     HTML, CSS, JavaScript and React.
                 </p>
 
@@ -325,6 +359,7 @@
                     <a
                         href="https://abdulhadirahimi.github.io/portfolio-website/"
                         target="_blank"
+                        rel="noopener noreferrer"
                         class="btn">
 
                         Live Demo
@@ -335,6 +370,7 @@
                     <a
                         href="https://github.com/abdulhadirahimi/portfolio-website"
                         target="_blank"
+                        rel="noopener noreferrer"
                         class="btn">
 
                         Source Code
@@ -362,6 +398,7 @@
                     <a
                         href="#"
                         target="_blank"
+                        rel="noopener noreferrer"
                         class="btn">
 
                         Live Demo
@@ -372,6 +409,7 @@
                     <a
                         href="#"
                         target="_blank"
+                        rel="noopener noreferrer"
                         class="btn">
 
                         Source Code
@@ -399,6 +437,7 @@
                     <a
                         href="#"
                         target="_blank"
+                        rel="noopener noreferrer"
                         class="btn">
 
                         Live Demo
@@ -409,6 +448,7 @@
                     <a
                         href="#"
                         target="_blank"
+                        rel="noopener noreferrer"
                         class="btn">
 
                         Source Code
@@ -444,6 +484,7 @@
             <a
                 href="assets/resume/Abdulhadi-Rahimi-Resume.pdf"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn">
 
                 View Resume
@@ -480,6 +521,7 @@
             <a
                 href="https://wa.me/93700362405?text=Hello%20Abdulhadi,%20I%20visited%20your%20portfolio%20website.%20I%20want%20to%20contact%20you."
                 target="_blank"
+                rel="noopener noreferrer"
                 class="whatsapp-btn">
 
                 <i class="fab fa-whatsapp"></i>
@@ -488,37 +530,47 @@
 
             </a>
 
+
             <!-- Contact Form -->
 
-            <form id="contact-form">
+           <form
+    id="contact-form"
+    action="https://formspree.io/f/mqpknblk"
+    method="POST">
 
-                <label>
+                <label for="name">
                     Name
                 </label>
 
                 <input
                     type="text"
                     id="name"
-                    placeholder="Enter your name">
+                    name="name"
+                    placeholder="Enter your name"
+                    required>
 
 
-                <label>
+                <label for="email">
                     Email
                 </label>
 
                 <input
                     type="email"
                     id="email"
-                    placeholder="Enter your email">
+                    name="email"
+                    placeholder="Enter your email"
+                    required>
 
 
-                <label>
+                <label for="message">
                     Message
                 </label>
 
                 <textarea
                     id="message"
-                    placeholder="Write your message"></textarea>
+                    name="message"
+                    placeholder="Write your message"
+                    required></textarea>
 
 
                 <button type="submit">
@@ -534,6 +586,7 @@
 
 
     </main>
+
 
     <!-- =========================
          Footer
@@ -559,3 +612,4 @@
 </body>
 
 </html>
+```

@@ -1,3 +1,4 @@
+
 // =========================================
 // Portfolio Website JavaScript
 // Author: Abdulhadi Rahimi
@@ -41,12 +42,16 @@ if (savedTheme === "dark") {
 
 } else {
 
+    document.body.classList.remove("dark");
+
     if (themeButton) {
         themeButton.textContent = "🌙 Dark";
     }
 
 }
 
+
+// =========================================
 // Dark Mode Toggle
 // =========================================
 
@@ -54,19 +59,20 @@ if (themeButton) {
 
     themeButton.addEventListener("click", function () {
 
-        document.body.classList.toggle("dark");
+        const darkModeEnabled =
+            document.body.classList.toggle("dark");
 
-        if (document.body.classList.contains("dark")) {
-
-            themeButton.textContent = "☀️ Light";
+        if (darkModeEnabled) {
 
             localStorage.setItem("theme", "dark");
 
+            themeButton.textContent = "☀️ Light";
+
         } else {
 
-            themeButton.textContent = "🌙 Dark";
-
             localStorage.setItem("theme", "light");
+
+            themeButton.textContent = "🌙 Dark";
 
         }
 
@@ -94,6 +100,11 @@ if (menuButton && navMenu) {
                 "Close Menu"
             );
 
+            menuButton.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
         } else {
 
             menuButton.textContent = "☰";
@@ -101,6 +112,11 @@ if (menuButton && navMenu) {
             menuButton.setAttribute(
                 "aria-label",
                 "Open Menu"
+            );
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
             );
 
         }
@@ -114,13 +130,17 @@ if (menuButton && navMenu) {
 // Close Mobile Menu After Clicking Link
 // =========================================
 
-const navLinks = document.querySelectorAll("nav ul li a");
+const navLinks =
+    document.querySelectorAll("nav ul li a");
 
 navLinks.forEach(function (link) {
 
     link.addEventListener("click", function () {
 
-        if (navMenu && navMenu.classList.contains("active")) {
+        if (
+            navMenu &&
+            navMenu.classList.contains("active")
+        ) {
 
             navMenu.classList.remove("active");
 
@@ -131,6 +151,11 @@ navLinks.forEach(function (link) {
                 menuButton.setAttribute(
                     "aria-label",
                     "Open Menu"
+                );
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
                 );
 
             }
@@ -151,7 +176,7 @@ const emailPattern =
 
 
 // =========================================
-// Contact Form Validation
+// Contact Form Submission
 // =========================================
 
 if (
@@ -162,82 +187,156 @@ if (
     formMessage
 ) {
 
-    form.addEventListener("submit", function (event) {
+    form.addEventListener(
+        "submit",
+        async function (event) {
 
-        event.preventDefault();
+            event.preventDefault();
 
-        const name = nameInput.value.trim();
+            const name =
+                nameInput.value.trim();
 
-        const email = emailInput.value.trim();
+            const email =
+                emailInput.value.trim();
 
-        const message = messageInput.value.trim();
+            const message =
+                messageInput.value.trim();
 
-        formMessage.textContent = "";
+            formMessage.textContent = "";
 
 
-        // Name Validation
+            // Name Validation
 
-        if (name === "") {
+            if (name === "") {
 
-            formMessage.style.color = "red";
+                formMessage.style.color = "red";
 
-            formMessage.textContent =
-                "Please enter your name.";
+                formMessage.textContent =
+                    "Please enter your name.";
 
-            return;
+                return;
+
+            }
+
+
+            // Email Validation
+
+            if (email === "") {
+
+                formMessage.style.color = "red";
+
+                formMessage.textContent =
+                    "Please enter your email.";
+
+                return;
+
+            }
+
+
+            if (!emailPattern.test(email)) {
+
+                formMessage.style.color = "red";
+
+                formMessage.textContent =
+                    "Please enter a valid email address.";
+
+                return;
+
+            }
+
+
+            // Message Validation
+
+            if (message === "") {
+
+                formMessage.style.color = "red";
+
+                formMessage.textContent =
+                    "Please enter your message.";
+
+                return;
+
+            }
+
+
+            // Disable button while sending
+
+            const submitButton =
+                form.querySelector(
+                    'button[type="submit"]'
+                );
+
+            if (submitButton) {
+
+                submitButton.disabled = true;
+
+                submitButton.textContent =
+                    "Sending...";
+
+            }
+
+
+            // Send Form to Formspree
+
+            try {
+
+                const response = await fetch(
+                    form.action,
+                    {
+                        method: "POST",
+
+                        body: new FormData(form),
+
+                        headers: {
+                            "Accept": "application/json"
+                        }
+                    }
+                );
+
+
+                if (response.ok) {
+
+                    formMessage.style.color =
+                        "green";
+
+                    formMessage.textContent =
+                        "Message sent successfully!";
+
+                    form.reset();
+
+                } else {
+
+                    formMessage.style.color =
+                        "red";
+
+                    formMessage.textContent =
+                        "Something went wrong. Please try again.";
+
+                }
+
+            } catch (error) {
+
+                formMessage.style.color =
+                    "red";
+
+                formMessage.textContent =
+                    "Unable to send message. Please try again.";
+
+            }
+
+
+            // Enable button again
+
+            if (submitButton) {
+
+                submitButton.disabled = false;
+
+                submitButton.textContent =
+                    "Send Message";
+
+            }
 
         }
-
-
-        // Email Validation
-
-        if (email === "") {
-
-            formMessage.style.color = "red";
-
-            formMessage.textContent =
-                "Please enter your email.";
-
-            return;
-
-        }
-
-
-        if (!emailPattern.test(email)) {
-
-            formMessage.style.color = "red";
-
-            formMessage.textContent =
-                "Please enter a valid email address.";
-
-            return;
-
-        }
-
-
-        // Message Validation
-
-        if (message === "") {
-
-            formMessage.style.color = "red";
-
-            formMessage.textContent =
-                "Please enter your message.";
-
-            return;
-
-        }
-
-
-        // Success
-
-        formMessage.style.color = "green";
-
-        formMessage.textContent =
-            "Message sent successfully!";
-
-        form.reset();
-
-    });
+    );
 
 }
